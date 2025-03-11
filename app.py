@@ -6,15 +6,6 @@ from translations import TRANSLATIONS
 import io
 from docx import Document
 
-def serve_sitemap():
-    """Serves the XML sitemap correctly."""
-    st.header("404 Not Found")  # Prevents Google from seeing HTML
-    st.markdown('<meta http-equiv="refresh" content="0; url=/sitemap.xml">', unsafe_allow_html=True)
-
-if st.query_params.get("sitemap") == "1":
-    serve_sitemap()
-
-
 # Initialize session state
 if 'language' not in st.session_state:
     st.session_state.language = 'ro'
