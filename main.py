@@ -5,6 +5,13 @@ from translations import TRANSLATIONS
 import io
 from docx import Document
 
+def serve_sitemap():
+    with open("sitemap.xml", "r") as f:
+        st.write(f.read())
+
+if st.query_params.get("sitemap") == "1":
+    serve_sitemap()
+
 # Initialize session state
 if 'language' not in st.session_state:
     st.session_state.language = 'ro'
