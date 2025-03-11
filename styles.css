@@ -1,0 +1,525 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Global styles */
+.stApp {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Hide default sidebar */
+section[data-testid="stSidebar"] {
+    display: none !important;
+}
+
+/* Navigation menu styling */
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    background: #f8f9fa;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.nav-menu {
+    background: rgba(0, 102, 204, 0.1);
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.nav-menu a {
+    color: #0066cc;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.nav-menu a:hover {
+    background: rgba(0, 102, 204, 0.1);
+    transform: translateY(-2px);
+}
+
+.nav-menu a.active {
+    background: #0066cc;
+    color: white;
+}
+
+/* Language selector styling */
+.language-selector {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.language-selector button {
+    background: transparent !important;
+    border: none !important;
+    font-size: 1.5rem;
+    padding: 0.3rem !important;
+    transition: all 0.3s ease;
+    box-shadow: none !important;
+}
+
+.language-selector button:hover {
+    transform: scale(1.1);
+}
+
+/* Title animations and styling */
+.title-container h1 {
+    color: #0066cc;
+    font-weight: 700;
+    text-align: center;
+    margin: 2rem 0;
+    animation: fadeInDown 1s ease-out;
+}
+
+.subtitle-container h3 {
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: fadeInUp 1s ease-out;
+}
+
+/* Search container styling */
+.search-container {
+    background: linear-gradient(145deg, #ffffff, #f0f2f6);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,102,204,0.15);
+    margin: 2rem 0;
+    animation: slideIn 0.5s ease-out;
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.search-container:hover {
+    border-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+/* Input field styling */
+.stTextInput input {
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0,102,204,0.1);
+}
+
+.stTextInput input:focus {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0,102,204,0.2);
+    transform: scale(1.01);
+}
+
+/* Button styling */
+.stButton > button {
+    background: linear-gradient(45deg, #0066cc, #0080ff);
+    color: white;
+    font-weight: 600;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    border: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stButton > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,102,204,0.3);
+    background: linear-gradient(45deg, #0080ff, #0066cc);
+}
+
+/* Results container styling */
+.results-container {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    margin-top: 2rem;
+    animation: slideUp 0.5s ease-out;
+}
+
+.result-card {
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #ffffff, #f0f2f6);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,102,204,0.15);
+}
+
+.result-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.code-box {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.code-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0,102,204,0.2);
+}
+
+.code-box .label {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.code-box .value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0066cc;
+}
+
+.arrow {
+    font-size: 2rem;
+    color: #0066cc;
+    animation: pulse 2s infinite;
+}
+
+.activity-name {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.activity-name:hover {
+    background: #f0f2f6;
+    transform: translateX(5px);
+}
+
+.activity-name h4 {
+    color: #0066cc;
+    margin-bottom: 1rem;
+}
+
+/* Reminder box styling */
+.reminder-box {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid #ffc107;
+    margin: 2rem auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeInUp 0.5s ease-out;
+}
+
+.reminder-box p {
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.reminder-box strong {
+    color: #0066cc;
+    display: block;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* New improved menu styles */
+.new-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.menu-item {
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    background-color: #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #dee2e6;
+    transform: translateY(-2px);
+}
+
+.menu-item.active {
+    background-color: #0066cc;
+    color: white;
+}
+
+.home-link {
+    background-color: #28a745;
+    color: white;
+}
+
+.home-link:hover {
+    background-color: #218838;
+}
+
+/* CAEN codes by section styles */
+.section-codes-header {
+    display: flex;
+    background-color: #0066cc;
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    margin-top: 10px;
+}
+
+.section-codes-row {
+    display: flex;
+    padding: 8px 10px;
+    border-bottom: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.section-codes-row:hover {
+    background-color: #e9ecef;
+}
+
+.section-codes-row:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.code-column {
+    width: 120px;
+    font-weight: 500;
+}
+
+.description-column {
+    flex: 1;
+}
+
+/* Make expanders more visible */
+.streamlit-expanderHeader {
+    background-color: #f0f2f6;
+    border-radius: 5px;
+    padding: 5px !important;
+    margin-bottom: 5px !important;
+}
+
+.streamlit-expanderHeader:hover {
+    background-color: #e6e9ef;
+}
+
+
+/* Animation keyframes */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(-60%);
+    }
+}
+
+/* Category styling */
+.category-info {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid #0066cc;
+}
+
+.category-info p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.category-info strong {
+    color: #0066cc;
+    font-size: 1.1rem;
+}
+
+/* Selectbox styling enhancement */
+.stSelectbox {
+    margin-bottom: 1rem;
+}
+
+.stSelectbox > div > div {
+    background: white;
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.stSelectbox > div > div:hover {
+    border-color: #0066cc;
+    box-shadow: 0 0 0 3px rgba(0,102,204,0.2);
+}
+
+/* Add these styles for nested result cards and options */
+.result-card.nested {
+    margin-left: 2rem;
+    border-left: 4px solid #0066cc;
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+}
+
+.mapping-number {
+    background: #0066cc;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    animation: fadeInRight 0.5s ease-out;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Styles for navigation back button */
+.back-button {
+    color: #666;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    background: #f0f2f6;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.back-button:hover {
+    background: rgba(0, 102, 204, 0.2);
+    color: #0066cc;
+    transform: translateX(-4px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button i {
+    font-size: 1.2rem;
+}
+
+/* Standalone back button style */
+.standalone-back-button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(45deg, #0066cc, #0080ff);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 102, 204, 0.3);
+}
+
+.standalone-back-button:hover {
+    transform: translateY(-2px) translateX(-3px);
+    box-shadow: 0 6px 15px rgba(0, 102, 204, 0.4);
+}
+
+.back-arrow {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.back-text {
+    font-size: 1.1rem;
+}
