@@ -6,8 +6,9 @@ import io
 from docx import Document
 
 def serve_sitemap():
-    with open("sitemap.xml", "r") as f:
-        st.write(f.read())
+    """Serves the XML sitemap correctly."""
+    st.header("404 Not Found")  # Prevents Google from seeing HTML
+    st.markdown('<meta http-equiv="refresh" content="0; url=/sitemap.xml">', unsafe_allow_html=True)
 
 if st.query_params.get("sitemap") == "1":
     serve_sitemap()
