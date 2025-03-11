@@ -4,6 +4,32 @@ from data_processor import CAENDataProcessor
 from translations import TRANSLATIONS
 import io
 from docx import Document
+from flask import Flask, send_from_directory
+import threading
+import os
+
+# Initialize Flask app
+flask_app = Flask(__name__)
+
+# Serve sitemap.xml
+@flask_app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(os.getcwd(), 'sitemap.xml', mimetype="application/xml")
+
+# Create a function to run Flask in a separate thread
+def run_flask():
+    flask_app.run(host='0.0.0.0', port=5000)
+
+# Start Flask in a separate thread
+thread = threading.Thread(target=run_flask)
+thread.start()
+
+# Streamlit app code
+st.title("Welcome to Conversie-CAEN3")
+
+# Your Streamlit app code goes here
+st.write("This is your Streamlit application.")
+
 
 def serve_sitemap():
     """Serves the XML sitemap correctly."""
