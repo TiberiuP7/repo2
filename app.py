@@ -4,19 +4,6 @@ from data_processor import CAENDataProcessor
 from translations import TRANSLATIONS
 import io
 from docx import Document
-from dotenv import load_dotenv
-import os
-import openai
-
-# Load environment variables
-load_dotenv()
-
-# Set your API key
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
-from file_convertor import some_function
-
-some_function(openai_api_key)
 
 # Initialize session state
 if 'language' not in st.session_state:
