@@ -14,6 +14,10 @@ load_dotenv()
 # Set your API key
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
+from file_convertor import some_function
+
+some_function(openai_api_key)
+
 # Initialize session state
 if 'language' not in st.session_state:
     st.session_state.language = 'ro'
