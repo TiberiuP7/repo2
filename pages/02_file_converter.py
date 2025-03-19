@@ -15,6 +15,20 @@ from pdfminer.layout import LTTextContainer, LTChar, LTTextBox, LTTextLine
 from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from pdf_vision_helper import extract_text_with_gpt4v
+from openai import OpenAI
+from config import OPENAI_API_KEY
+
+client = OpenAI(api_key=OPENAI_API_KEY)
+
+    response = client.chat.completions.create(
+        model=self.model_name,
+        messages=conversation,
+        temperature=0,
+        top_p=1,
+        frequency_penalty=0,    
+        presence_penalty=0
+    )
+    return response.choices[0].message.content
 
 def convert_pdf_to_word(pdf_file):
     """Convert PDF to Word document with improved formatting preservation"""
