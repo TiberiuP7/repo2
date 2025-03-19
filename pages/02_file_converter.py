@@ -220,6 +220,7 @@ def main():
         page_icon="📄",
         layout="wide",
         initial_sidebar_state="expanded"
+        menu_items=None
     )
 
     # Load custom CSS
