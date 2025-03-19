@@ -1,0 +1,4 @@
+
+User-agent: *
+Allow: /
+Sitemap: https://your-repl-url.repl.co/sitemap.xml
