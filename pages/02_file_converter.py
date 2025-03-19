@@ -23,8 +23,9 @@ def convert_pdf_to_word(pdf_file):
         doc = Document()
         found_text = False
 
-        # Reset file pointer to start
-        pdf_file.seek(0)
+        # Create BytesIO object from uploaded file
+        pdf_bytes = io.BytesIO(pdf_file.read())
+        pdf_bytes.seek(0)
 
         # Validate PDF first
         try:
@@ -163,9 +164,10 @@ def convert_word_to_pdf(docx_file):
         # Create a bytes buffer for the PDF
         pdf_buffer = io.BytesIO()
 
-        # Read the Word document
-        doc = Document(docx_file)
-
+        # Read the Word document as binary
+        doc_bytes = io.BytesIO(docx_file.read())
+        doc = Document(doc_bytes)
+        
         # Create PDF with UTF-8 encoding
         c = canvas.Canvas(pdf_buffer, pagesize=letter)
         width, height = letter
