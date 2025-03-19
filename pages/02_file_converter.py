@@ -16,7 +16,6 @@ from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 from pdf_vision_helper import extract_text_with_gpt4v
 from openai import OpenAI
-from config import OPENAI_API_KEY
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
