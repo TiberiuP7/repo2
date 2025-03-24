@@ -56,7 +56,7 @@ def set_page_config():
         </head>
     """, unsafe_allow_html=True)
 
-    st.html("<head>  <title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title>")
+    st.html("<head><title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title></head>")
     st.html("<head><meta name="description" content="Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate."></head>")
     st.html("<head><meta name="keywords" content="CAEN, coduri CAEN, Rev.2, Rev.3, conversie CAEN, România, 2024, actualizare CAEN, firme, PFA"></head>")
     st.html("<head><meta name="author" content="Convertor CAEN"></head>")
