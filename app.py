@@ -4,6 +4,26 @@ from data_processor import CAENDataProcessor
 from translations import TRANSLATIONS
 import io
 from docx import Document
+import streamlit.components.v1 as components
+
+components.html("""
+    <script crossorigin="anonymous">
+    // Accesăm documentul părinte al iframe-ului
+    const doc = parent.document;
+    // Setăm titlul paginii
+    doc.title = "Conversie CAEN3 – Convertor coduri";
+    // Creăm și adăugăm meta description
+    let metaDesc = doc.createElement('meta');
+    metaDesc.name = "description";
+    metaDesc.content = "Aplicație Streamlit pentru conversia codurilor CAEN (Clasificarea Activităților Economice) de la versiunea 2 la versiunea 3.";
+    doc.head.appendChild(metaDesc);
+    // (Opțional) Creăm și adăugăm meta keywords
+    let metaKeys = doc.createElement('meta');
+    metaKeys.name = "keywords";
+    metaKeys.content = "CAEN, conversie, cod CAEN Rev.2, cod CAEN Rev.3, clasificare CAEN";
+    doc.head.appendChild(metaKeys);
+    </script>
+""", height=0)
 
 # Initialize session state
 if 'language' not in st.session_state:
@@ -33,10 +53,10 @@ def set_page_config():
             """
         }
     )
-    st.header("Conversie coduri CAEN Rev. 2 la Nomenclatorul CAEN Rev.3 gratuita")
-    st.text("Actualizarea codurilor CAEN Rev. 2 la Nomenclatorul CAEN Rev. 3.  Convertor Coduri CAEN Instrumentul oficial pentru conversia codurilor CAEN Rev.2 la Rev.3. Actualizat pentru anul 2024 conform reglementărilor în vigoare.")
-    st.text("Actualizeaza-ti codurile CAEN ale firmei tale la nomenclatorul CAEN Rev. 3, Tool oficial gratuit 2025")
-    st.text("Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.")
+    
+   st.title("Conversie CAEN3 – Convertor coduri CAEN Rev.2 la Rev.3")
+   st.write("Aplicație web care te ajută să convertești codurile CAEN din versiunea Rev.2 în versiunea Rev.3, oferind rapid echivalențele necesare. Ideal pentru firme și contabili care trebuie să actualizeze codurile CAEN conform noii clasificări.")
+
 
     # Enhanced SEO metadata and noscript fallback
     st.markdown(
@@ -240,17 +260,27 @@ def validate_caen_code(code):
     return None
 
 def main():
-
-    st.title("Conversie Coduri CAEN")
-    st.header("Tool gratuit de conversiune a codurilor CAEN Rev. 2 la Nomenclatorul CAEN Rev.3")
-    st.text("Actualizarea codurilor CAEN Rev. 2 la Nomenclatorul CAEN Rev. 3.  Convertor Coduri CAEN Instrumentul oficial pentru conversia codurilor CAEN Rev.2 la Rev.3. Actualizat pentru anul 2024 conform reglementărilor în vigoare.")
-    st.text("Actualizeaza-ti codurile CAEN ale firmei tale la nomenclatorul CAEN Rev. 3, Tool oficial gratuit 2025")
-    st.text("Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.")
-    
     set_page_config()
     load_css()
     initialize_data()
 
+     st.markdown("""
+        <head>
+            <title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title>
+            <meta name="description" content="Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.">
+            <meta name="keywords" content="CAEN, coduri CAEN, Rev.2, Rev.3, conversie CAEN, România, 2024, actualizare CAEN, firme, PFA">
+            <meta name="author" content="Convertor CAEN">
+            <meta property="og:title" content="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3">
+            <meta property="og:description" content="Instrument oficial pentru conversia codurilor CAEN. Actualizat 2024, gratuit pentru companii și PFA.">
+            <meta property="og:image" content="generated-icon.png">
+            <meta property="og:type" content="website">
+            <noscript>
+                <h1>Convertor Coduri CAEN 2024</h1>
+                <p>Instrument oficial pentru conversia codurilor CAEN Rev.2 la Rev.3. Vă rugăm să activați JavaScript pentru a utiliza aplicația.</p>
+            </noscript>
+        </head>
+    """, unsafe_allow_html=True)
+    
     # Navigation menu
     st.markdown("""
         <div class="nav-container">
