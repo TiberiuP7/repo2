@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://conversie-caen3.ro/sitemap.xml
