@@ -25,22 +25,28 @@ st.set_page_config(
     }
 )
 
-# Injectăm meta taguri SEO prin iframe JS
-components.html("""
-    <script>
-    const doc = parent.document;
-    doc.title = "Conversie CAEN3 – Convertor coduri";
-    let metaDesc = doc.createElement('meta');
-    metaDesc.name = "description";
-    metaDesc.content = "Convertor CAEN Rev.2 la Rev.3 – aplicație actualizată pentru 2024.";
-    doc.head.appendChild(metaDesc);
+# 👇 Cod SEO - rulează la inițializarea aplicației
+index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
+index_html = index_path.read_text()
 
-    let metaKeys = doc.createElement('meta');
-    metaKeys.name = "keywords";
-    metaKeys.content = "CAEN, coduri, conversie, clasificare, economie";
-    doc.head.appendChild(metaKeys);
-    </script>
-""", height=0)
+custom_head = """
+  <title>Conversie CAEN3 – Convertor coduri CAEN Rev.2 la Rev.3</title>
+  <meta name="description" content="Convertor coduri CAEN Rev.2 -> Rev.3 pentru firme și contabili."/>
+  <meta name="keywords" content="CAEN, conversie, coduri, clasificare, CAEN rev.2, CAEN rev.3"/>
+"""
+
+if custom_head not in index_html:
+    new_html = index_html.replace('</head>', custom_head + '</head>')
+    index_path.write_text(new_html)
+try:
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(index_html, 'html.parser')
+    noscript_tag = soup.find('noscript')
+    if noscript_tag:
+        noscript_tag.string.replace_with("Aplicație pentru conversia codurilor CAEN. Activați JavaScript.")
+        index_path.write_text(str(soup))
+except Exception as e:
+    print("Modificare noscript eșuată:", e)
 
 # Initialize session state
 if 'language' not in st.session_state:
