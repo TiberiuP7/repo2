@@ -56,14 +56,14 @@ def set_page_config():
         </head>
     """, unsafe_allow_html=True)
 
-    st.html("<head>  <title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title>
-            <meta name="description" content="Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.">
-            <meta name="keywords" content="CAEN, coduri CAEN, Rev.2, Rev.3, conversie CAEN, România, 2024, actualizare CAEN, firme, PFA">
-            <meta name="author" content="Convertor CAEN">
-            <meta property="og:title" content="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3">
-            <meta property="og:description" content="Instrument oficial pentru conversia codurilor CAEN. Actualizat 2024, gratuit pentru companii și PFA.">
-            <meta property="og:image" content="generated-icon.png">
-            <meta property="og:type" content="website"></head>")
+    st.html("<head>  <title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title>")
+    st.html("<head><meta name="description" content="Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate."></head>")
+    st.html("<head><meta name="keywords" content="CAEN, coduri CAEN, Rev.2, Rev.3, conversie CAEN, România, 2024, actualizare CAEN, firme, PFA"></head>")
+    st.html("<head><meta name="author" content="Convertor CAEN"></head>")
+    st.html("<head><meta property="og:title" content="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3"></head>")
+    st.html("<head><meta property="og:description" content="Instrument oficial pentru conversia codurilor CAEN. Actualizat 2024, gratuit pentru companii și PFA."></head>")
+    st.html("<head><meta property="og:image" content="generated-icon.png"></head>")
+    st.html("<head><meta property="og:type" content="website"></head>")
             
 @st.cache_resource
 def get_data_processor():
