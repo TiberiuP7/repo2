@@ -11,6 +11,21 @@ import pathlib
 from bs4 import BeautifulSoup 
 # asigurați-vă că `beautifulsoup4` e în requirements.txt
 
+st.set_page_config(
+    page_title="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3",
+    page_icon="generated-icon.png",
+    layout="wide",
+    initial_sidebar_state="expanded",
+    menu_items={
+        'Get Help': 'https://your-help-url',
+        'About': """
+        ### Convertor Coduri CAEN
+        Instrumentul oficial pentru conversia codurilor CAEN Rev.2 la Rev.3.
+        Actualizat pentru anul 2024 conform reglementărilor în vigoare.
+        """
+    }
+)
+
 # Path către index.html-ul Streamlit instalat
 index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
 # Citim conținutul actual
@@ -63,40 +78,6 @@ def get_translation(key):
 def load_css():
     with open('styles.css') as f:
         st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-def set_page_config():
-    st.set_page_config(
-        page_title="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3",
-        page_icon="generated-icon.png",
-        layout="wide",
-        initial_sidebar_state="expanded",
-        menu_items={
-            'Get Help': 'https://your-help-url',
-            'About': """
-            ### Convertor Coduri CAEN
-            Instrumentul oficial pentru conversia codurilor CAEN Rev.2 la Rev.3.
-            Actualizat pentru anul 2024 conform reglementărilor în vigoare.
-            """
-        }
-    )
-
-    # Enhanced SEO metadata and noscript fallback
-    st.markdown("""
-        <head>
-            <title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title>
-            <meta name="description" content="Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.">
-            <meta name="keywords" content="CAEN, coduri CAEN, Rev.2, Rev.3, conversie CAEN, România, 2024, actualizare CAEN, firme, PFA">
-            <meta name="author" content="Convertor CAEN">
-            <meta property="og:title" content="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3">
-            <meta property="og:description" content="Instrument oficial pentru conversia codurilor CAEN. Actualizat 2024, gratuit pentru companii și PFA.">
-            <meta property="og:image" content="generated-icon.png">
-            <meta property="og:type" content="website">
-            <noscript>
-                <h1>Convertor Coduri CAEN 2024</h1>
-                <p>Instrument oficial pentru conversia codurilor CAEN Rev.2 la Rev.3. Vă rugăm să activați JavaScript pentru a utiliza aplicația.</p>
-            </noscript>
-        </head>
-    """, unsafe_allow_html=True)
             
 @st.cache_resource
 def get_data_processor():
