@@ -78,9 +78,8 @@ def set_page_config():
             """
         }
     )
-    
-   st.title("Conversie CAEN3 – Convertor coduri CAEN Rev.2 la Rev.3")
-   st.write("Aplicație web care te ajută să convertești codurile CAEN din versiunea Rev.2 în versiunea Rev.3, oferind rapid echivalențele necesare. Ideal pentru firme și contabili care trebuie să actualizeze codurile CAEN conform noii clasificări.")
+    st.title("Conversie CAEN3 – Convertor coduri CAEN Rev.2 la Rev.3")
+    st.write("Aplicație web care te ajută să convertești codurile CAEN din versiunea Rev.2 în versiunea Rev.3, oferind rapid echivalențele necesare. Ideal pentru firme și contabili care trebuie să actualizeze codurile CAEN conform noii clasificări.")
 
 
     # Enhanced SEO metadata and noscript fallback
