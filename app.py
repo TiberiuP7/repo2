@@ -39,7 +39,52 @@ def set_page_config():
     st.text("Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.")
 
     # Enhanced SEO metadata and noscript fallback
-    st.markdown("""
+    st.markdown(
+        <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="shortcut icon" href="./favicon.png" />
+    <link
+      rel="preload"
+      href="./static/media/SourceSansPro-Regular.DZLUzqI4.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./static/media/SourceSansPro-SemiBold.sKQIyTMz.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="./static/media/SourceSansPro-Bold.-6c9oR8J.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+
+    <title>Conversie coduri CAEN</title>
+
+    <!-- initialize window.prerenderReady to false and then set to true in React app when app is ready for indexing -->
+    <script>
+      window.prerenderReady = false
+    </script>
+    <script type="module" crossorigin src="./static/js/index.BlylrL8P.js"></script>
+    <link rel="stylesheet" crossorigin href="./static/css/index.DpJG_94W.css">
+  <style media=""></style><style data-emotion="st-emotion-cache-global" data-s=""></style><style data-emotion="st-emotion-cache" data-s=""></style></head>
+  <body>
+    <noscript>Conversie coduri CAEN Rev. 2 la Nomenclatorul CAEN Rev.3 gratuita Actualizarea codurilor CAEN Rev. 2 la Nomenclatorul CAEN Rev. 3. Convertor Coduri CAEN Instrumentul oficial pentru conversia codurilor CAEN Rev.2 la Rev.3. Actualizat pentru anul 2024 conform reglementărilor în vigoare. Actualizeaza-ti codurile CAEN ale firmei tale la nomenclatorul CAEN Rev. 3, Tool oficial gratuit 2025. Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.</noscript>
+    <div id="root"><div class=""><div class="withScreencast" data-testid="stScreencast"><div class="stApp stAppEmbeddingId-ssxmo0aj8aqd st-emotion-cache-1r4qj8v ee4bbma0" data-testid="stApp" data-test-script-state="initial" data-test-connection-state="PINGING_SERVER"><header tabindex="-1" class="stAppHeader st-emotion-cache-12fmjuu e4hpqof0" data-testid="stHeader"><div class="stDecoration st-emotion-cache-1dp5vir e4hpqof1" data-testid="stDecoration" id="stDecoration"></div><div class="stAppToolbar st-emotion-cache-15ecox0 e4hpqof2" data-testid="stToolbar"></div></header><div class="stAppViewContainer appview-container st-emotion-cache-1yiq2ps eht7o1d0" data-testid="stAppViewContainer" data-layout="narrow"><section tabindex="0" class="stMain st-emotion-cache-bm2z3a eht7o1d1" data-testid="stMain"><div class="stMainBlockContainer block-container st-emotion-cache-mtjnbi eht7o1d4" data-testid="stMainBlockContainer"><div data-testid="stVerticalBlockBorderWrapper" data-test-scroll-behavior="normal" class="st-emotion-cache-0 eu6p4el5"><div class="st-emotion-cache-b95f0i eu6p4el4"><div class="stVerticalBlock st-emotion-cache-o3een2 eu6p4el3" data-testid="stVerticalBlock" width="380"><div class="stElementContainer element-container st-emotion-cache-kj6hex eu6p4el1" data-testid="stElementContainer" data-stale="false" width="auto"><div class="stAppSkeleton st-emotion-cache-19s3t1h eu9v5nf0" data-testid="stAppSkeleton"><div class="st-emotion-cache-8hpu4s eu9v5nf1"></div><div class="st-emotion-cache-8g8ihq eu9v5nf2"><div width="98%" class="st-emotion-cache-gyzp1i eu9v5nf3"></div><div width="100%" class="st-emotion-cache-lfnwze eu9v5nf3"></div><div width="96%" class="st-emotion-cache-2xxb0l eu9v5nf3"></div><div width="65%" class="st-emotion-cache-po6pmj eu9v5nf3"></div></div><div width="75%" height="9rem" class="st-emotion-cache-faxsvr eu9v5nf4"></div></div></div></div></div></div></div><div data-testid="stAppIframeResizerAnchor" data-iframe-height="true" class="st-emotion-cache-1dumvfu eht7o1d9"></div></section></div></div></div><div data-testid="portal" id="portal" class="st-emotion-cache-1q6lfs0 e19n7mk11"></div></div><div class=""></div></div>
+  
+
+</body></html>
+
+        """
         <head>
             <title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title>
             <meta name="description" content="Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.">
