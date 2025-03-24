@@ -9,7 +9,6 @@ import os
 from pathlib import Path
 import pathlib
 from bs4 import BeautifulSoup 
-# asigurați-vă că `beautifulsoup4` e în requirements.txt
 
 st.set_page_config(
     page_title="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3",
@@ -26,26 +25,22 @@ st.set_page_config(
     }
 )
 
-# Path către index.html-ul Streamlit instalat
-index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
-# Citim conținutul actual
-index_html = index_path.read_text()
-# Definim meta tag-urile dorite
-custom_head = """
-  <title>Conversie CAEN3 – Convertor coduri CAEN Rev.2 la Rev.3</title>
-  <meta name="description" content="Convertor online al codurilor CAEN (Clasificarea Activităților Economice) versiunea 2 în versiunea 3."/>
-  <meta name="keywords" content="cod CAEN, conversie CAEN, CAEN Rev 2, CAEN Rev 3, clasificare, economie"/>
-"""
-# Injectăm meta tag-urile imediat înainte de închiderea head-ului
-if custom_head not in index_html:  # evităm dublarea dacă scriptul rulează de mai multe ori
-    new_html = index_html.replace('</head>', custom_head + '</head>')
-    index_path.write_text(new_html)
-    
-soup = BeautifulSoup(index_path.read_text(), 'html.parser')
-noscript_tag = soup.find('noscript')
-if noscript_tag:
-    noscript_tag.string.replace_with("Conversie CAEN3 – convertor coduri CAEN Rev.2 la Rev.3. Vă rugăm activați JavaScript pentru a folosi aplicația.")
-    index_path.write_text(str(soup))
+# Injectăm meta taguri SEO prin iframe JS
+components.html("""
+    <script>
+    const doc = parent.document;
+    doc.title = "Conversie CAEN3 – Convertor coduri";
+    let metaDesc = doc.createElement('meta');
+    metaDesc.name = "description";
+    metaDesc.content = "Convertor CAEN Rev.2 la Rev.3 – aplicație actualizată pentru 2024.";
+    doc.head.appendChild(metaDesc);
+
+    let metaKeys = doc.createElement('meta');
+    metaKeys.name = "keywords";
+    metaKeys.content = "CAEN, coduri, conversie, clasificare, economie";
+    doc.head.appendChild(metaKeys);
+    </script>
+""", height=0)
 
 # Initialize session state
 if 'language' not in st.session_state:
@@ -190,7 +185,6 @@ def validate_caen_code(code):
     return None
 
 def main():
-    set_page_config()
     # Servește robots.txt și sitemap.xml dacă URL-ul le cere
     request_uri = os.environ.get("REQUEST_URI", "").lower()
     if "robots.txt" in request_uri:
