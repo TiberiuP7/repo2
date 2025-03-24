@@ -237,15 +237,6 @@ def main():
       sitemap = Path("sitemap.xml").read_text()
       st.markdown(f"```xml\n{sitemap}\n```", unsafe_allow_html=True)  # ca text preformatat
       st.stop()
-
-    # Serve robots.txt și sitemap.xml dacă sunt cerute
-    requested_path = st.experimental_get_query_params()
-    if "robots.txt" in st.experimental_get_url().lower():
-        st.markdown(Path("robots.txt").read_text(), unsafe_allow_html=True)
-        st.stop()
-    elif "sitemap.xml" in st.experimental_get_url().lower():
-        st.markdown(Path("sitemap.xml").read_text(), unsafe_allow_html=True)
-        st.stop()
       
     set_page_config()
     st.title("Conversie CAEN3 – Convertor coduri CAEN Rev.2 la Rev.3")
