@@ -9,12 +9,6 @@ import pathlib
 from bs4 import BeautifulSoup 
 # asigurați-vă că `beautifulsoup4` e în requirements.txt
 
-soup = BeautifulSoup(index_path.read_text(), 'html.parser')
-noscript_tag = soup.find('noscript')
-if noscript_tag:
-    noscript_tag.string.replace_with("Conversie CAEN3 – convertor coduri CAEN Rev.2 la Rev.3. Vă rugăm activați JavaScript pentru a folosi aplicația.")
-    index_path.write_text(str(soup))
-
 # Path către index.html-ul Streamlit instalat
 index_path = pathlib.Path(st.__file__).parent / "static" / "index.html"
 # Citim conținutul actual
@@ -29,6 +23,12 @@ custom_head = """
 if custom_head not in index_html:  # evităm dublarea dacă scriptul rulează de mai multe ori
     new_html = index_html.replace('</head>', custom_head + '</head>')
     index_path.write_text(new_html)
+    
+soup = BeautifulSoup(index_path.read_text(), 'html.parser')
+noscript_tag = soup.find('noscript')
+if noscript_tag:
+    noscript_tag.string.replace_with("Conversie CAEN3 – convertor coduri CAEN Rev.2 la Rev.3. Vă rugăm activați JavaScript pentru a folosi aplicația.")
+    index_path.write_text(str(soup))
 
 components.html("""
     <script crossorigin="anonymous">
