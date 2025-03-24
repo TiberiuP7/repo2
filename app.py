@@ -47,25 +47,6 @@ if noscript_tag:
     noscript_tag.string.replace_with("Conversie CAEN3 – convertor coduri CAEN Rev.2 la Rev.3. Vă rugăm activați JavaScript pentru a folosi aplicația.")
     index_path.write_text(str(soup))
 
-components.html("""
-    <script crossorigin="anonymous">
-    // Accesăm documentul părinte al iframe-ului
-    const doc = parent.document;
-    // Setăm titlul paginii
-    doc.title = "Conversie CAEN3 – Convertor coduri";
-    // Creăm și adăugăm meta description
-    let metaDesc = doc.createElement('meta');
-    metaDesc.name = "description";
-    metaDesc.content = "Aplicație Streamlit pentru conversia codurilor CAEN (Clasificarea Activităților Economice) de la versiunea 2 la versiunea 3.";
-    doc.head.appendChild(metaDesc);
-    // (Opțional) Creăm și adăugăm meta keywords
-    let metaKeys = doc.createElement('meta');
-    metaKeys.name = "keywords";
-    metaKeys.content = "CAEN, conversie, cod CAEN Rev.2, cod CAEN Rev.3, clasificare CAEN";
-    doc.head.appendChild(metaKeys);
-    </script>
-""", height=0)
-
 # Initialize session state
 if 'language' not in st.session_state:
     st.session_state.language = 'ro'
