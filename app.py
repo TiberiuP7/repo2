@@ -231,23 +231,6 @@ def main():
     st.write("Aplicație web care te ajută să convertești codurile CAEN din versiunea Rev.2 în versiunea Rev.3, oferind rapid echivalențele necesare. Ideal pentru firme și contabili care trebuie să actualizeze codurile CAEN conform noii clasificări.")
     load_css()
     initialize_data()
-
-     st.markdown("""
-        <head>
-            <title>Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3</title>
-            <meta name="description" content="Convertor oficial și gratuit pentru codurile CAEN Rev.2 la Rev.3. Instrument actualizat 2024 pentru companii și PFA. Conversie instantă și export rezultate.">
-            <meta name="keywords" content="CAEN, coduri CAEN, Rev.2, Rev.3, conversie CAEN, România, 2024, actualizare CAEN, firme, PFA">
-            <meta name="author" content="Convertor CAEN">
-            <meta property="og:title" content="Convertor Coduri CAEN 2024 | Conversie Gratuită Rev.2 la Rev.3">
-            <meta property="og:description" content="Instrument oficial pentru conversia codurilor CAEN. Actualizat 2024, gratuit pentru companii și PFA.">
-            <meta property="og:image" content="generated-icon.png">
-            <meta property="og:type" content="website">
-            <noscript>
-                <h1>Convertor Coduri CAEN 2024</h1>
-                <p>Instrument oficial pentru conversia codurilor CAEN Rev.2 la Rev.3. Vă rugăm să activați JavaScript pentru a utiliza aplicația.</p>
-            </noscript>
-        </head>
-    """, unsafe_allow_html=True)
     
     # Navigation menu
     st.markdown("""
