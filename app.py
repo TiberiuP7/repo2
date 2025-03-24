@@ -229,14 +229,14 @@ def validate_caen_code(code):
 
 def main():
     # Servește robots.txt și sitemap.xml dacă URL-ul le cere
-    current_url = st.experimental_get_url().lower()
-    if current_url.endswith("robots.txt"):
+    request_uri = os.environ.get("REQUEST_URI", "").lower()
+    if "robots.txt" in request_uri:
         st.markdown(Path("robots.txt").read_text(), unsafe_allow_html=True)
         st.stop()
-    elif current_url.endswith("sitemap.xml"):
-        sitemap = Path("sitemap.xml").read_text()
-        st.markdown(f"```xml\n{sitemap}\n```", unsafe_allow_html=True)  # ca text preformatat
+    elif "sitemap.xml" in request_uri:
+        st.markdown(f"```xml\n{Path('sitemap.xml').read_text()}\n```", unsafe_allow_html=True)
         st.stop()
+
     set_page_config()
     st.title("Conversie CAEN3 – Convertor coduri CAEN Rev.2 la Rev.3")
     st.write("Aplicație web care te ajută să convertești codurile CAEN din versiunea Rev.2 în versiunea Rev.3, oferind rapid echivalențele necesare. Ideal pentru firme și contabili care trebuie să actualizeze codurile CAEN conform noii clasificări.")
