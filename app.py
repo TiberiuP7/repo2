@@ -306,8 +306,8 @@ def main():
     st.markdown("---")
     st.markdown(f"""
         <div class="reminder-box">
-            <p>{get_translation('notice2')}</p>
             <p>{get_translation('important_note')}</p>
+            <p>{get_translation('notice2')}</p>
             <p>{get_translation('legal_notice')}</p>
             <p>{get_translation('expanded_note')}</p>
         </div>
