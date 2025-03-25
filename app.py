@@ -308,6 +308,7 @@ def main():
         <div class="reminder-box">
             <p>{get_translation('important_note')}</p>
             <p>{get_translation('legal_notice')}</p>
+            <p>{get_translation('expanded_note')}</p>
         </div>
     """, unsafe_allow_html=True)
 
