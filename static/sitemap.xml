@@ -7,7 +7,7 @@
   </url>
   <url>
     <loc>https://app.conversie-caen3.ro/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>
