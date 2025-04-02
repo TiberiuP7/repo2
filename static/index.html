@@ -43,22 +43,28 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://conversie-caen3.ro">
-    <script type="application/ld+json">
-        {
-          "@context": "https://schema.org",
-          "@type": "WebApplication",
-          "name": "Conversie CAEN3",
-          "url": "https://conversie-caen3.ro",
-          "description": "Convertor online pentru coduri CAEN Rev.2 la Rev.3, actualizat pentru 2025.",
-          "applicationCategory": "BusinessApplication",
-          "operatingSystem": "All",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "RON"
-          }
+    <script>
+      const structuredData = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Conversie CAEN3",
+        "url": "https://conversie-caen3.ro",
+        "description": "Convertor online pentru coduri CAEN Rev.2 la Rev.3, actualizat pentru 2025.",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "RON"
         }
+      };
+
+      const script = document.createElement('script');
+      script.setAttribute('type', 'application/ld+json');
+      script.textContent = JSON.stringify(structuredData);
+      document.head.appendChild(script);
     </script>
+
     <style>
         :root {
             --primary-color: #0066cc;
