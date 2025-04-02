@@ -153,6 +153,36 @@
             }
         }
 
+         .navigation {
+            background-color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 0;
+        }
+        .navigation a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+        }
+        .navigation a.active,
+        .navigation a:hover {
+            color: var(--primary-color);
+            background-color: rgba(0,102,204,0.1);
+        }
+
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -250,6 +280,15 @@
             <p class="subtitle">Instrument oficial pentru conversia codurilor CAEN Rev. 2 la Rev. 3</p>
             <a href="https://app.conversie-caen3.ro" class="cta-button">Accesează Aplicația 🚀</a>
         </div>
+              
+        <nav class="navigation">
+            <ul>
+                <li><a href="/" class="active">Pagina Principală</a></li>
+                <li><a href="/despre-caen-rev3.html">Despre CAEN Rev.3</a></li>
+                <li><a href="/intrebari-frecvente-caen.html">Întrebări Frecvente</a></li>
+                <li><a href="/app">Accesează Aplicația</a></li>
+            </ul>
+        </nav>
 
         <div class="features">
             <div class="feature-card">
