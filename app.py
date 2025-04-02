@@ -302,6 +302,11 @@ def main():
                         display_results(bulk_results)
                         display_export_buttons(bulk_results, 'bulk')
 
+     # How-to guide section with SEO keywords
+    st.markdown("---")
+    st.markdown(f"## {get_translation('howto_title')}")
+    st.markdown(get_translation('howto_steps'))
+
     # Legal reminders section
     st.markdown("---")
     st.markdown(f"""
