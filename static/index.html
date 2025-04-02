@@ -175,6 +175,26 @@
             }
         }
 
+           /* Styling for ordered list section */
+        section.container ol {
+            text-align: left;
+            padding-left: 2rem;
+            margin: 2rem 0;
+        }
+        
+        section.container ol li {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+            position: relative;
+            padding-left: 0.5rem;
+        }
+        
+        section.container h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -187,7 +207,9 @@
             .features {
                 grid-template-columns: 1fr;
             }
-        }
+            section.container ol {
+                padding-left: 1.5rem;
+            }
     </style>
     <script>
         const structuredData = {
@@ -253,6 +275,19 @@
             <h3>⚠️ Notă Importantă</h3>
             <p>Actualizarea codurilor CAEN la Rev. 3 este obligatorie pentru toate firmele din România. Folosește acest instrument gratuit pentru a identifica noile coduri corespunzătoare activității tale.</p>
         </div>
+
+         <section class="container">
+            <h2>📋 Cum să actualizezi codul CAEN Rev.2 la CAEN Rev.3 în 2025?</h2>
+            <ol>
+                <li>Utilizează <strong>tabelul de corespondență CAEN</strong> Rev.2 la Rev.3 pentru a verifica noile coduri CAEN corespunzătoare activității tale</li>
+                <li>Completează cererea de actualizare CAEN pentru PFA sau SRL conform cerințelor ONRC</li>
+                <li>Pregătește documentația necesară pentru conversia codurilor CAEN Rev.2 la codurile CAEN Rev.3</li>
+                <li>Depune documentele pentru actualizare CAEN 2025 online sau la ghișeul ONRC România</li>
+                <li>După confirmarea corespondentei CAEN, actualizează datele firmei în toate evidențele interne și externe</li>
+                <li>Verifică periodic legislația privind economia și codurile CAEN pentru a fi la curent cu schimbările în sistemul de codificare CAEN</li>
+            </ol>
+        </section>
+        
         <footer>
             &copy; 2024 Panghe Tiberiu-Andrei. Toate drepturile rezervate.
         </footer>
