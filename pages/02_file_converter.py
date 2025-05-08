@@ -14,7 +14,7 @@ from pdfminer.high_level import extract_pages
 from pdfminer.layout import LTTextContainer, LTChar, LTTextBox, LTTextLine
 from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from pdf_vision_helper import extract_text_with_gpt4v
+from pdf_vision_helper import extract_text_with_gpt4o
 
 def convert_pdf_to_word(pdf_file):
     """Convert PDF to Word document with improved formatting preservation"""
@@ -100,8 +100,8 @@ def convert_pdf_to_word(pdf_file):
                     page.save(img_byte_arr, format='PNG')
                     img_byte_arr = img_byte_arr.getvalue()
 
-                    # Extract text using GPT-4V
-                    extracted_text = extract_text_with_gpt4v(img_byte_arr)
+                    # Extract text using GPT-4o
+                    extracted_text = extract_text_with_gpt4o(img_byte_arr)
                     if extracted_text:
                         found_text = True
                         paragraph = doc.add_paragraph()
