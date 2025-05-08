@@ -17,7 +17,7 @@ def extract_text_with_gpt4o(pdf_page_image):
         image_base64 = base64.b64encode(pdf_page_image).decode('utf-8')
 
         response = client.chat.completions.create(
-            model="gpt-4o",
+            model="gpt-4o mini",
             messages=[
                 {
                     "role": "user",
