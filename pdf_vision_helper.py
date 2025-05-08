@@ -2,9 +2,9 @@ import os
 import base64
 from openai import OpenAI
 
-def extract_text_with_gpt4v(pdf_page_image):
+def extract_text_with_gpt4o(pdf_page_image):
     """
-    Use GPT-4 Vision to extract text from a PDF page image
+    Use GPT-4o Vision to extract text from a PDF page image
     """
     try:
         api_key = os.getenv("OPENAI_API_KEY")
@@ -17,7 +17,7 @@ def extract_text_with_gpt4v(pdf_page_image):
         image_base64 = base64.b64encode(pdf_page_image).decode('utf-8')
 
         response = client.chat.completions.create(
-            model="gpt-4-vision-preview",
+            model="gpt-4o",
             messages=[
                 {
                     "role": "user",
@@ -41,4 +41,4 @@ def extract_text_with_gpt4v(pdf_page_image):
         return response.choices[0].message.content
 
     except Exception as e:
-        return f"Error in GPT-4V text extraction: {str(e)}"
+        return f"Error in GPT-4o text extraction: {str(e)}"
