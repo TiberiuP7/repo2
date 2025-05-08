@@ -8,10 +8,11 @@ def extract_text_with_gpt4v(pdf_page_image):
     """
     Use GPT-4 Vision to extract text from a PDF page image
     """
-    try:
-        if not os.getenv('OPENAI_API_KEY'):
-            return "Error: OpenAI API key not found. Please set the OPENAI_API_KEY environment variable."  
-        client = OpenAI()
+    api_key = os.getenv("OPENAI_API_KEY")
+    if not api_key:
+        return "Error: OpenAI API key not found. Please set the OPENAI_API_KEY environment variable."  
+
+    client = OpenAI(api_key=api_key)
         
         # Convert the image to base64
         image_base64 = base64.b64encode(pdf_page_image).decode('utf-8')
